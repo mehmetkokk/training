@@ -4,37 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body {
-            background-color: rgba(115, 38, 38, 0.98);
-            color: white;
-        }
-        #surname{
-            padding: 10px 0 100px 100px;
-            margin: 100px;
-            border-bottom-color: black !important;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
-<div id="name">ahmet</div>
-<div id="surname"></div>
 <div id="nameSurname"></div>
+<div id="for"></div>
 <script>
-    f();
+    const user = {
+      name: 'ahmet',
+      surname: 'kocoglu'
+    };
+    const users = [user];
+    document.getElementById('nameSurname').innerText = user.name + ' ' + user.surname;
+    document.getElementById('for').innerText = JSON.stringify(users);
 
-    function f() {
-        const name = 'net';
-        const surname = 'adım';
-        let nameSurname = '';
-        document.getElementById('name').innerText = '<strong>' + name + '</strong>';
-        document.getElementById('surname').innerHTML = surname;
-
-        nameSurname = name + ' ' + surname;
-        document.getElementById('nameSurname').innerHTML = nameSurname;
-    }
-    // fork .. ..
 </script>
 </body>
 </html>
