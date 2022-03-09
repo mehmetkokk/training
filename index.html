@@ -2,39 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        body {
-            background-color: rgba(115, 38, 38, 0.98);
-            color: white;
-        }
-        #surname{
-            padding: 10px 0 100px 100px;
-            margin: 100px;
-            border-bottom-color: black !important;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
+         #kutuToplam{
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+
+    }
     </style>
+    
 </head>
 <body>
-<div id="name">ahmet</div>
-<div id="surname"></div>
-<div id="nameSurname"></div>
-<script>
-    f();
-
-    function f() {
-        const name = 'net';
-        const surname = 'adım';
-        let nameSurname = '';
-        document.getElementById('name').innerText = '<strong>' + name + '</strong>';
-        document.getElementById('surname').innerHTML = surname;
-
-        nameSurname = name + ' ' + surname;
-        document.getElementById('nameSurname').innerHTML = nameSurname;
-    }
-    // fork .. ..
-</script>
+        <form name="toplam">
+            <label>1. Sayı : </label>
+            <input type="text" id="Number1"><br><br>
+            <label>2. Sayı : </label>
+            <input type="text" id="Number2"><br><br>
+            <input type="button" id="btnTotal" value="TOPLA">
+        </form>
+        <br>
+        <div id="kutuToplam"></div>
+        
+        <script>
+            let btn=document.getElementById("btnTotal");
+            btn.onclick=function(){
+                const  n1=Number(document.getElementById("Number1").value);
+                const  n2=Number(document.getElementById("Number2").value);
+                const  toplam=n1+n2;
+                document.getElementById("kutuToplam").innerHTML=" "+toplam;
+            }
+        </script>
 </body>
 </html>
